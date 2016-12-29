@@ -6,8 +6,6 @@ if (Meteor.isServer) {
     };
     updateMethodAndInsertPermissionSnippet = function(func, name, enabled, handler, endpoints, handlername) {
       var newFunc;
-      console.log('endpoints[name]', endpoints[name]);
-      console.log('name', name);
       if (enabled && name.indexOf('/__dummy_coll_') === -1) {
         if (!endpoints.hasOwnProperty(name)) {
           throw new Meteor.Error('Detected an issue with method permissions, please revise configuration of endpoint: ' + name);
